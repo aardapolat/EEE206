@@ -1,2 +1,295 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+#include <stdio.h>
+
+#include <string.h>
+
+#define Total_People
+
+#define Answer1 "YES"
+
+#define Answer2 "NO"
+
+#define Answer3 "ABSTAIN"
+
+
+
+int votesCount1 = 0, votesCount2 = 0; votesCount3 =0;
+
+void exit(){
+    main();
+}
+// Voting System
+void castVote() {
+
+	int choice;
+
+	printf("\n\n ### Yes or No ####\n\n");
+
+	printf("\n 1. %s", Answer1);
+
+	printf("\n 2. %s", Answer2);
+	
+	printf("\n 3. %s", Answer3);
+	
+
+	printf("\n\n Input your choice (1 - 3) : ");
+
+	scanf("%d", &choice);
+
+	switch (choice) {
+
+	case 1: votesCount1++;
+	
+
+		break;
+
+	case 2: votesCount2++;
+
+		break; 
+
+    case 3: votesCount3++;
+        break;
+
+	default: printf("\n Error: Wrong Choice !! Please retry");
+
+		getchar();
+
+	}
+
+	
+	printf("\n thanks for vote !!\n");
+	return exit();
+
+}
+// The section where the votes cast are counted
+void votesCount() {
+
+	printf("\n\n ##### Voting Statics ####");
+
+	printf("\n %s - %d ", Answer1, votesCount1);
+
+	printf("\n %s - %d ", Answer2, votesCount2);
+	
+	printf("\n %s - %d ", Answer3, votesCount3);
+
+
+}
+// Showing the vote that received the higher choice than the other according to the result of the votes. Abstain votes will not be counted.
+void getLeadingCandidate() {
+
+	printf("\n\n #### Leading Candiate ####\n\n");
+
+	if (votesCount1 > votesCount2 )
+
+		printf("[%s]", Answer1);
+
+	else if (votesCount2>votesCount1)
+
+		printf("[%s]", Answer2);
+
+
+	else
+
+		printf("----- Warning !!! No-win situation----");
+
+}
+
+// Defining the main lines of the program. The commands defined above are enabled to work by entering numbers from the keyboard inside. 
+//After voting, the system automatically kicks the user out of the program. When you log in again, the result of the votes appears.
+int main()
+
+{
+
+	char username[20];
+
+	char password[20];
+
+	
+	
+	printf("Enter your School ID:\n");
+
+	scanf("%s", &username);
+
+	printf("Enter your password:\n");
+
+	scanf("%s", &password);
+
+//1. User Identification
+	if (strcmp(username, "20191710003") == 0) {
+
+		if (strcmp(password, "berkedemirel") == 0) {
+
+			printf("\nWelcome.Login Success!");
+
+			int i;
+
+			int choice;
+
+			do {
+
+				printf("\n\n *Welcome to Voting 2022 *");
+
+				printf("\n\n 1. Cast Your Vote");
+
+				printf("\n 2. Check Vote Count");
+
+				printf("\n 3. Check leading Candidate");
+
+				printf("\n 4. Exit");
+
+				printf("\n\n Please enter your choice : ");
+
+				scanf("%d", &choice);
+
+				switch (choice)
+
+				{
+
+				case 1: castVote(); break;
+
+				case 2: votesCount(); break;
+
+				case 3: getLeadingCandidate(); break;
+				
+				case 4: exit(); break;
+
+				default: printf("\n Error: Invalid Choice");
+
+				}
+
+			} while (choice != 999);
+
+			getchar();
+
+		}
+		else {
+
+			printf("\nwrong password");
+			printf("\n OR");
+
+		}
+
+	}
+//2. User Identification
+if (strcmp(username, "20191706004") == 0) {
+
+		if (strcmp(password, "ardapolat") == 0) {
+
+			printf("\nWelcome.Login Success!");
+
+			int i;
+
+			int choice;
+
+			do {
+
+				printf("\n\n *Welcome to Voting 2022 *");
+
+				printf("\n\n 1. Cast Your Vote");
+
+				printf("\n 2. Check Vote Count");
+
+				printf("\n 3. Check leading Candidate");
+
+				printf("\n 4. Exit");
+
+				printf("\n\n Please enter your choice : ");
+
+				scanf("%d", &choice);
+
+				switch (choice)
+
+				{
+
+				case 1: castVote(); break;
+
+				case 2: votesCount(); break;
+
+				case 3: getLeadingCandidate(); break;
+				
+				case 4: main(); break;
+
+				default: printf("\n Error: Invalid Choice");
+
+				}
+
+			} while (choice != 999);
+
+			getchar();
+
+		}
+		else {
+
+			printf("\nwrong password");
+			printf("\n OR");
+
+		}
+
+	}
+//3. User Identification
+        if (strcmp(username, "20191706001") == 0) {
+
+		if (strcmp(password, "zeynepsudekoc") == 0) {
+
+			printf("\nWelcome.Login Success!");
+
+			int i;
+
+			int choice;
+
+			do {
+
+				printf("\n\n *Welcome to Voting 2022 *");
+
+				printf("\n\n 1. Cast Your Vote");
+
+				printf("\n 2. Check Vote Count");
+
+				printf("\n 3. Check leading Candidate");
+
+				printf("\n 4. Exit");
+
+				printf("\n\n Please enter your choice : ");
+
+				scanf("%d", &choice);
+
+				switch (choice)
+
+				{
+
+				case 1: castVote(); break;
+
+				case 2: votesCount(); break;
+
+				case 3: getLeadingCandidate(); break;
+				
+				case 4: main(); break;
+
+				default: printf("\n Error: Invalid Choice");
+
+				}
+
+			} while (choice != 999);
+
+			getchar();
+
+		}
+		else {
+
+			printf("\nwrong password");
+			printf("\n OR");
+
+		}
+
+	}
+	
+	
+else {
+
+		printf("\nUser doesn't exist\n");
+		exit();
+
+	}
+
+	return 0;
+
+}
