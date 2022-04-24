@@ -94,7 +94,7 @@ void getLeadingCandidate() {
 }
 
 // Defining the main lines of the program. The commands defined above are enabled to work by entering numbers from the keyboard inside. 
-//After voting, the system automatically kicks the user out of the program. When you log in again, the result of the votes appears.
+// After voting, the system automatically kicks the user out of the program. When you log in again, the result of the votes appears.
 int main()
 
 {
