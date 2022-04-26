@@ -2,8 +2,6 @@
 
 #include <string.h>
 
-#define Total_People
-
 #define Answer1 "YES"
 
 #define Answer2 "NO"
